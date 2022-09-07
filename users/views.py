@@ -1,6 +1,6 @@
 import profile
 from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login
 # from django.contrib.auth import authenticate, login
 
@@ -47,5 +47,14 @@ def register(request):
     }
 
     return render(request, 'users/register.html', context)
+
+def user_login(request):
+    form = AuthenticationForm(request, data=request.POST or None)
+
+    if form.is_valid():
+        user = form.get_user()
+        login(request, user)
+        return redirect('home')
+    return render(request, 'users/login.html', {'form':form})
 
 
