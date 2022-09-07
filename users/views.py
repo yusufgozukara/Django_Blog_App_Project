@@ -1,7 +1,8 @@
 import profile
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
+# from django.contrib.auth import authenticate, login
 
 from users.forms import UserProfileForm, UserForm
 
@@ -31,8 +32,8 @@ def register(request):
         form_user = UserForm(request.POST)
         form_profile = UserProfileForm(request.POST, request.FILES)
         if form_user.is_valid() and form_profile.is_valid():
-            user = form_user().save()
-            profile = form_profile().save(commit=False)
+            user = form_user.save()
+            profile = form_profile.save(commit=False)
             profile.user = user
             profile.save()
 
