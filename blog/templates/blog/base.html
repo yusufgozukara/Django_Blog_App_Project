@@ -33,7 +33,8 @@
                  {% else %}   
                 <li class="nav-item active">
                     
-                    <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a>
+                    {% comment %} <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a> {% endcomment %}
+                    <a>Log Out</a>
                 </li>
                 <li>
                     <a class="nav-link" href="">{{ request.user | capfirst }}</a>
