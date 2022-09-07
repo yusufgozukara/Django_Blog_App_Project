@@ -10,9 +10,9 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            password = form.cleaned_data['password1']
 
-            user = authenticate(username, password)
+            user = authenticate(username = username, password = password)
             login(request, user)
             return redirect('home')
 
