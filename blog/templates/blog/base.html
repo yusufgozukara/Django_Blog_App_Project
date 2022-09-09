@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- navabar start -->
+    <!-- navbar start -->
     <nav class="navbar navbar-expand-lg navbar navbar-primary ">
         <div class="container-fluid ">
             <a class="navbar-brand" href="/">
@@ -23,19 +23,25 @@
                 {% if request.user.is_authenticated %} {% if request.user.is_superuser %}
     
                 <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="/admin">Admin</a>
                 </li>
                 <li class="nav-item active">
                     
-                    {% comment %} <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a> {% endcomment %}
-                    <a>Log Out</a>
+                    <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a>
+                    {% comment %} <a>Log Out</a> {% endcomment %}
                 </li>
                 
                  {% else %}   
                 <li class="nav-item active">
                     
-                    {% comment %} <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a> {% endcomment %}
-                    <a>Log Out</a>
+                    <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a>
+                    {% comment %} <a>Log Out</a> {% endcomment %}
                 </li>
                 <li>
                     <a class="nav-link" href="">{{ request.user | capfirst }}</a>
@@ -45,9 +51,9 @@
                 {% else %}
     
                 <li class="nav-item active">
-                    {% comment %} {% url 'user_login' %} {% endcomment %}
-                    {% comment %} <a class="nav-link" href="{% url 'user_login' %}">Log In</a> {% endcomment %}
-                    <a>Log In</a>
+                    {% url 'user_login' %}
+                    <a class="nav-link" href="{% url 'user_login' %}">Log In</a>
+                    {% comment %} <a>Log In</a> {% endcomment %}
                 </li>
                 <li class="nav-item active">
                     {% comment %} {% url 'register' %} {% endcomment %}

@@ -1,5 +1,5 @@
-/* .navbar {
-    background-color: cadetblue;
+.navbar {
+    /* background-color: cadetblue; */
     background-color: black;
 }
 
@@ -37,6 +37,6 @@ body {
 
 textarea { max-width: 100% } */
 
-.navbar {
+/* .navbar {
     background-color: black;
 }

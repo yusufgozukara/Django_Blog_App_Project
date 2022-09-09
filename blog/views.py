@@ -65,3 +65,7 @@ def blog_delete(request, id):
     }
 
     return render(request, 'blog/blog_delete.html', context)
+
+def about(request):
+    
+    return render(request, 'blog/about.html')
