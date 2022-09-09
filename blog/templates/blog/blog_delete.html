@@ -1,17 +1,18 @@
 {% extends 'blog/base.html' %} 
 
-{% block title %} Home {% endblock title %} 
+{% block title %} Delete {% endblock title %} 
 
 {% block content %}
 
 <div>
     <h1>
-        blog Add
+        blog Delete
     </h1>
     <form action="" method='POST'>
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value='Add'>
+        Are you sure to delete {{blog}}
+        
+        <input type="submit" value=' Blog Delete '>
     </form>
     
 </div>

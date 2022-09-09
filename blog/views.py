@@ -49,3 +49,16 @@ def blog_update(request, id):
     }
 
     return render(request, 'blog/blog_update.html', context)
+
+def blog_delete(request, id):
+    blog = Blog.objects.get(id=id)
+
+    if request.method =='POST':
+        blog.delete()
+        return redirect('home')
+
+    context = {
+        'blog' : blog
+    }
+
+    return render(request, 'blog/blog_delete.html', context)
