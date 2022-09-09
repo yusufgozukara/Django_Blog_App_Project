@@ -8,15 +8,16 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
     <title>Blog App</title>
 </head>
 <body>
 
     <!-- navabar start -->
-    <nav class="navbar navbar-expand-lg navbar navbar-dark ">
+    <nav class="navbar navbar-expand-lg navbar navbar-primary ">
         <div class="container-fluid ">
             <a class="navbar-brand" href="/">
-            {% comment %} <img src="{% static 'todo/images/cw_logo.png' %}" alt="Hi!" width="45" height="45"> {% endcomment %}
+            <img src="{% static 'blog/images/cw_logo.jpg' %}" alt="Hi!" width="75" >
             Clarusway Blog App</a>
             <ul class="navbar-nav ml-auto">
                 {% if request.user.is_authenticated %} {% if request.user.is_superuser %}

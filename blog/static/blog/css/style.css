@@ -1,5 +1,6 @@
-.navbar {
+/* .navbar {
     background-color: cadetblue;
+    background-color: black;
 }
 
 .container{
@@ -28,9 +29,14 @@
 }
 
 body {
-    background-image: url(https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483__480.jpg);
+    background-image: url(https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
     background-size: cover;
     background-repeat: no-repeat;
+    background-color:black;
 }
 
-textarea { max-width: 100% }
+textarea { max-width: 100% } */
+
+.navbar {
+    background-color: black;
+}
