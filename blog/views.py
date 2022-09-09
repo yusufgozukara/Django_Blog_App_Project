@@ -35,6 +35,14 @@ def blog_update(request, id):
     blog = Blog.objects.get(id=id)
     form = BlogForm(instance=blog)
 
+    if request.method =='POST':
+        form = BlogForm(request.POST, instance=blog)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    
+
     context = {
         "blog" : blog,
         "form" : form
