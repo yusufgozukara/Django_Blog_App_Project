@@ -16,7 +16,7 @@
     <ul>
         {% for blog in blogs %}
         
-       <li>{{blog}}</li> 
+       <li> <a href="{% url 'update' blog.id%}">{{blog}}</a> </li> 
     
         {% endfor %}
 

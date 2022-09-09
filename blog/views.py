@@ -29,3 +29,15 @@ def blog_create(request):
     }
 
     return render(request, 'blog/blog_add.html', context)
+
+
+def blog_update(request, id):
+    blog = Blog.objects.get(id=id)
+    form = BlogForm(instance=blog)
+
+    context = {
+        "blog" : blog,
+        "form" : form
+    }
+
+    return render(request, 'blog/blog_update.html', context)
