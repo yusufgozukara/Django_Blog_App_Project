@@ -4,7 +4,12 @@
 
 {% block content %}
 
-<div>
+<div><h1>Blog Add Part</h1>
+    <form action="/add/" method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value='Add'>
+    </form>
     <h1>
         blog Home
     </h1>

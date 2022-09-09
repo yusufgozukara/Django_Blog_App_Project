@@ -8,8 +8,10 @@ from .forms import BlogForm
 
 def home(request):
     blogs = Blog.objects.all()
+    form = BlogForm()
     context = {
-        'blogs' : blogs
+        'blogs' : blogs,
+        'form' : form
     }
     return render(request, 'blog/home.html', context)
 
