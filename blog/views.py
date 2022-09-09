@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Blog
 from .forms import BlogForm
@@ -15,6 +15,12 @@ def home(request):
 
 def blog_create(request):
     form = BlogForm()
+    if request.method =='POST':
+        form = BlogForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
 
     context = {
         'form':form
