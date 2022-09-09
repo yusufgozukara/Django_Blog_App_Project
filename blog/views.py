@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Blog
 from .forms import BlogForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -21,6 +22,7 @@ def blog_create(request):
         form = BlogForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Blog created successfully')
             return redirect('home')
 
 
@@ -55,6 +57,7 @@ def blog_delete(request, id):
 
     if request.method =='POST':
         blog.delete()
+        messages.warning(request, 'Blog deleted')
         return redirect('home')
 
     context = {
