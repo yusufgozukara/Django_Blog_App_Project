@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %} 
+
+{% block title %} Home {% endblock title %} 
+
+{% block content %}
+
+<div>
+    <h1>
+        blog Add
+    </h1>
+    <form action="" method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value='Add'>
+    </form>
+    
+</div>
+
+
+
+{% endblock content %}
